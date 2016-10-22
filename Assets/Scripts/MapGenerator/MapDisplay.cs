@@ -13,15 +13,12 @@ public class MapDisplay : MonoBehaviour {
 
     public void removeMap()
     {
-        Debug.Log("before  " + baseMap.transform.childCount);
         foreach (Transform child in baseMap.transform)
         {
             GameObject.DestroyImmediate(child.gameObject);
         }
-        Debug.Log("After  " + baseMap.transform.childCount);
         if(baseMap.transform.childCount > 0)
         {
-            Debug.Log("removeAgain");
             removeMap();
         }
     }
